@@ -1,0 +1,35 @@
+{
+  "name": "a02_timg233_package",
+  "version": "0.0.1",
+  "description": "This is the package for timg233 a02 assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-fall/a02-TimG233.git"
+  },
+  "keywords": [
+    "a02",
+    "assignment",
+    "galo.sh",
+    "open-meteo"
+  ],
+  "author": "timg233",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-fall/a02-TimG233/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-fall/a02-TimG233#readme",
+  "dependencies": {
+    "minimist": "^1.2.6",
+    "moment-timezone": "^0.5.37",
+    "node-fetch": "^3.2.10"
+  },
+  "bin": {
+    "galosh.js": "./cli.js"
+  },
+  "type": "module"
+}
+
