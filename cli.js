@@ -27,30 +27,25 @@ if (args.n) {
     lat = args.n;
 } else if (args.s) {
     lat = args.s * -1;
-} else {
-    process.exit(1);
 }
 
 if (args.e) {
     lng = args.e;
 } else if (args.w) {
     lng = args.w * -1;
-} else {
-    process.exit(1);
 }
 
-const days = args.d;
+var days = args.d;
 
 if (days == 0) {
     console.log("today.");
 } else if (days > 1) {
     console.log("in " + days + " days.");
-} else if (days == 1) {
-    console.log("tomorrow");
 } else {
-    console.log("Invalid date");
-    process.exit(1);
+    console.log("tomorrow.");
+    days = 1;
 }
+
 
 // get timezone
 const timezone = moment.tz.guess();
@@ -65,9 +60,9 @@ const response = await fetch(weather_url)
 const data = await response.json();
 
 // print the result
-if (args.j) {
+if (typeof args.j === 'undefined') {
+    console.log(data.daily.precipitation_hours[days]);
+} else {
     console.log(data);
     process.exit(0);
-} else {
-    console.log(data.daily.precipitation_hours[days]);
 }
