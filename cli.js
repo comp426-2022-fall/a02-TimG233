@@ -22,7 +22,10 @@ if (args.h) {
     process.exit();
 }
 
-var lat, lng, day; 
+var lat = 91; 
+var lng = 91;  
+// if -j then output lat must be in range
+var day; 
 if (args.n) {
     lat = args.n;
 } else if (args.s) {
